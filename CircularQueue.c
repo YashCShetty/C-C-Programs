@@ -27,10 +27,8 @@ void delete_front(){
     {
         int item;
         item=a[front];
-        printf("\n %d",a[0]);
         front=(front+1)%MAX;
         count--;
-        printf("\n %d",front);
         printf("Item deleted is %d",item);
     }
 }
