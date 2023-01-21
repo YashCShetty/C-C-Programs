@@ -10,11 +10,16 @@ int top=-1;
 int *s;
 void push(int item){
     if(top==stacksize-1){
-        printf("Stack Full Increased by 1\n");
-        stacksize++;
+        printf("Stack Full,needs to be increased\n");
+        printf("Enter the value by which the stack is to be increased \n");
+        int n;
+        scanf("%d",&n);
+        stacksize=stacksize+n;
         s=(int*)realloc(s,stacksize*sizeof(int));
     }
     s[++top]=item;
+    printf("Top value is %d",top);
+    printf("Stacksize value is %d",stacksize);
 }
 int pop()
 {
@@ -37,7 +42,7 @@ void main()
     int item,ch;
     s=(int*)malloc(stacksize*sizeof(int));
     while(1) {
-        printf("Welcome to stacks using dynamic array \n");
+        printf("\nWelcome to stacks using dynamic array \n");
         printf("1.Push \n2.Pop 3.Display 4.Exit \n ");
         scanf("%d",&ch);
         switch(ch)
